@@ -99,7 +99,6 @@ export function ProgressUploadPage() {
         type="file"
         ref={fileInputRef}
         accept="image/*"
-        capture="environment"
         onChange={handleFileChange}
         style={{ display: 'none' }}
       />
@@ -189,7 +188,7 @@ export function ProgressUploadPage() {
                 color: 'var(--text-primary)',
                 display: 'flex',
                 alignItems: 'center',
-                justify: 'space-between',
+                justifyContent: 'space-between',
                 border: '1px solid var(--border-medium)'
               }}>
                 <div>
