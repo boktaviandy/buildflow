@@ -83,7 +83,7 @@ export function ProgressTab({ projectId }) {
                 color: 'var(--text-primary)',
                 display: 'flex',
                 alignItems: 'center',
-                justify: 'space-between',
+                justifyContent: 'space-between',
                 border: '1px solid var(--border-subtle)'
               }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontWeight: 600, color: 'var(--accent-amber)' }}>
