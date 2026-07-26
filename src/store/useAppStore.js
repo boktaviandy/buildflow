@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 import {
   MOCK_USERS,
   MOCK_PROJECTS,
@@ -10,7 +11,9 @@ import {
   MOCK_TIMELINE
 } from '../data/mockData';
 
-export const useAppStore = create((set, get) => ({
+export const useAppStore = create(
+  persist(
+    (set, get) => ({
   // Auth state
   currentUser: MOCK_USERS[1], // Default to PM (Rian Hidayat)
   users: MOCK_USERS,
@@ -207,5 +210,19 @@ export const useAppStore = create((set, get) => ({
         ...taskData
       }
     ]
-  }))
-}));
+    }))
+  ),
+  {
+    name: 'buildflow-storage',
+    partialize: (state) => ({
+      currentUser: state.currentUser,
+      projects: state.projects,
+      progressLogs: state.progressLogs,
+      materials: state.materials,
+      workforce: state.workforce,
+      finance: state.finance,
+      documents: state.documents,
+      timeline: state.timeline,
+    })
+  }
+));
