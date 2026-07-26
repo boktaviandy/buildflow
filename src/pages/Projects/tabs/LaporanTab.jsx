@@ -162,7 +162,7 @@ export function LaporanTab({ project, progressLogs, materials, workforce }) {
                     fontSize: '0.68rem',
                     color: 'var(--text-primary)',
                     display: 'flex',
-                    justify: 'space-between'
+                    justifyContent: 'space-between'
                   }}>
                     <span>{log.date}</span>
                     <span>{log.geoCoords || log.location}</span>
